@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div class="form-group col-lg-6">
+	<label for="numOne">Eibel</label>
+    <input type="text" name="numOne" class="form-control" id="numOne" onchange="withEibelAndFibel()"
+</div>
+
+<div class="form-group col-lg-6">
+	<label for="numTwo">Fibel</label>
+    <input type="text" name="numTwo" class="form-control" id="numTwo" onchange="withEibelAndFibel()"
+</div>
+
+<div class="form-group col-lg-6">
+	<label for="answer">Able</label>
+    <input type="text" name="answer" class="form-control" id="answer" onchange="withEibelAndFibel()"
+</div>
+
+
+
+<script>
+function withEibelAndFibel() {
+	var total = parseInt(document.getElementById("numOne").value);
+    var val2 = parseInt(document.getElementById("numTwo").value);
+    if (!total) { total = 0; }
+    if (!val2) { val2 = 0; }
+    
+    var ansD = document.getElementById("answer");
+    ansD.value = total - val2;
+}
+
+</script>
+
+</body>
+</html>
