@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<label id="global"></label>
+<input type="text" name="bagel"</input><br>
+<br>
+
+<label id="local"></label>
+<label id="bagel"></label> 
+
+
+
+<script>
+cifuentes()
+
+function cifuentes(bagel, local, global) {
+  let localScope = "(bagel)";
+  document.getElementById("bagel").innerHTML = localScope;
+  
+  let localScope2 = "local";
+  document.getElementById("local").innerHTML = localScope2;
+  
+  let localScope3 = "global";
+  document.getElementById("global").innerHTML = localScope3;
+}
+</script>
+
+</body>
+</html>
