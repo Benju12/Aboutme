@@ -1,0 +1,44 @@
+<html>
+	<head>
+    <script>
+	function writeStuff()
+	{
+   	document.getElementById("stuff").innerHTML = "Stuff?";
+	var myList = document.getElementsByName("rhino");
+	myList[0].innerHTML = "rhino";
+	myList[1].innerHTML = "otherRhino";
+	const btn = document.getElementById("myButton")
+ 	btn.addEventListener("click", function() {const initialText = 'Click me';
+
+  if (btn.textContent.toLowerCase().includes(initialText.toLowerCase())) {
+    btn.innerHTML =
+      '<span style="background-color: lime">You clicked!</span>';
+  } else {
+    btn.textContent = initialText;
+  }});
+	}
+	
+	
+	
+    </script>
+    <style>
+	[name='rhino'] {color:white; background-color:grey;}
+	tall {font-size:150%; color:pink;}
+	
+	
+    </style>
+	
+	</head>
+    	<body>
+	
+	
+	</body>
+
+	<body onload="writeStuff()">
+	<button id="myButton">press this</button>
+   	<p id="stuff"></p>
+	<p name="rhino">empty</p>
+	<p name="rhino"class="tall">empty</p>
+	
+    </body>
+</html>
