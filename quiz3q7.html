@@ -1,0 +1,32 @@
+<html>
+<head>
+<script>
+function myFunction() {
+	document.getElementById("paragraph").innerHTML += "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in imperdiet tellus. Duis varius odio libero, ac eleifend diam porta non. Vestibulum tempor bibendum nisl vitae tincidunt. Proin bibendum velit in turpis hendrerit malesuada. Nullam turpis felis, sagittis id dolor sit amet, imperdiet ornare ipsum. Donec varius leo dolor, eu varius libero fermentum et. Etiam ut consectetur arcu, at varius lectus.";
+    
+	var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+
+
+    }
+</script>
+<style>
+[id="paragraph"] {color:white; background-color:grey;}
+</style>
+</head>
+<body onload="myFunction()">
+
+<h1>Quiz 3</h1>
+<h2>Question 7</h2>
+
+<p id="paragraph"></p>
+
+<input type="range" min="1" max="10" value="5" id="myRange">
+<p>Value: <span id="demo"></span></p>
+</body>
+</html>
