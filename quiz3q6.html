@@ -1,0 +1,28 @@
+<html>
+<head>
+<script>
+function grow() {
+setInterval(displayHello, 5000);
+}
+function displayHello() {
+ const element = document.getElementById("more").innerHTML += "Hello";
+}
+
+function stop() {
+	const element = document.getElementById("more");
+    element.remove();
+ 
+}
+</script>
+</head>
+<body>
+
+<h1>Quiz 3</h1>
+<h2>Question 6</h2>
+
+<p id="more"></p>
+<button onclick="grow()">Start Grow</button><br>
+<button onclick="stop()">Stop Grow</button>
+
+</body>
+</html>
