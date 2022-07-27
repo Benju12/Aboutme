@@ -1,0 +1,135 @@
+<html>
+<head>
+  <meta charset="utf-8">
+ <script>
+function numbers()
+{
+function Complex(real1, imaginary1) {
+ 
+  this.real1 = 0;
+  this.imaginary1 = 0;
+  this.real1 = (typeof real1 === 'undefined') ? this.real1 : parseFloat(real1);
+  this.imaginary1 = (typeof imaginary1 === 'undefined') ? this.imaginary1 : parseFloat(imaginary1);
+ 
+}
+ 
+Complex.transform = function(num) {
+  var complex;
+  complex = (num instanceof Complex) ? num : complex;
+  complex = (typeof num === 'number') ? new Complex(num, 0) : num
+  return complex;
+ 
+};
+ 
+function display_complex(re, im) {
+  if(im === '0') return '' + re;
+  if(re === 0) return '' + im + 'i';
+  if(im < 0) return '' + re + im + 'i';
+  return '' + re + '+' + im + 'i';
+}
+
+function display_Multcomplex(re, im) {
+  if(im === '0') return '' + re;
+  if(re === 0) return '' + im + 'i';
+  if(im < 0) return '' + re + im;
+  return '' + re + '' + '-' + im;
+}
+//addition
+function add_complex_num(first, second) {
+  var num1, num2;
+  num1 = Complex.transform(first);
+  num2 = Complex.transform(second);
+  var real1 = num1.real1 + num2.real1;
+  var imaginary1 = num1.imaginary1 + num2.imaginary1;
+  return display_complex(real1, imaginary1);
+ 
+}
+
+//subtraction
+function sub_complex_num(first, second) {
+  var num1, num2;
+  num1 = Complex.transform(first);
+  num2 = Complex.transform(second);
+  var real1 = num1.real1 - num2.real1;
+  var imaginary1 = num1.imaginary1 - num2.imaginary1;
+  return display_complex(real1, imaginary1);
+ 
+}
+
+//multiplying
+function mult_complex_num(first, second) {
+  var num1, num2;
+  num1 = Complex.transform(first);
+  num2 = Complex.transform(second);
+  var real1 = (num1.real1 * num2.real1)-(num1.imaginary1 * num2.imaginary1);
+  var imaginary1 = (num1.real1 * num2.imaginary1)+(num1.imaginary1 * num2.real1);
+  return display_Multcomplex(real1, imaginary1);
+ 
+}
+
+
+//dividing
+function divide_complex_num(first, second) {
+  var num1, num2;
+  num1 = Complex.transform(first);
+  num2 = Complex.transform(second);
+  var denom = (num2.imaginary1 * num2.imaginary1) + (num2.real1 * num2.real1);
+var real1 = ((num1.real1 * num2.real1) + (num1.imaginary1 * num2.imaginary1)) / denom;
+var imaginary1 = (num2.real1 * num1.imaginary1) - (num1.real1 * num2.imaginary1) / denom; 
+return display_complex(real1, imaginary1);   
+}
+
+
+ var a = new Complex(2, -3);
+ var b = new Complex(-1,  -3);
+ var c = new Complex(7, -9);
+ 
+console.log(add_complex_num(a,b));
+document.getElementById('one').innerHTML=add_complex_num(a,b);
+ 
+console.log(sub_complex_num(a,c));
+document.getElementById('two').innerHTML=sub_complex_num(a,c);
+
+
+console.log(mult_complex_num(a,c));
+document.getElementById('three').innerHTML=mult_complex_num(a,c);
+
+console.log(sub_complex_num(c,b));
+document.getElementById('four').innerHTML=sub_complex_num(c,b);
+
+console.log(divide_complex_num(c,b));
+document.getElementById('five').innerHTML=divide_complex_num(c,b);
+
+console.log(mult_complex_num(b,b));
+document.getElementById('six').innerHTML=mult_complex_num(b,b);
+
+console.log(divide_complex_num(a,a));
+document.getElementById('seven').innerHTML=divide_complex_num(a,a);
+}
+</script>
+
+  </head>
+ 
+<body onload="numbers()">
+ 
+<h1>output of two complex number:</h1>
+ 
+<p>A + B</p>
+<p  id="one"></p><br>
+<p>A - C</p>
+<p id="two"></p><br>
+<p>A * C</p>
+<p id="three"></p><br>
+<p>C - B</p>
+<p id="four"></p><br>
+<p>C / B</p>
+<p id="five"></p><br>
+<p>B * B</p>
+<p id="six"></p><br>
+<p> A / A</p>
+<p id="seven"></p><br>
+</body>
+ 
+
+ 
+</html>
