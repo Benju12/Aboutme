@@ -1,0 +1,42 @@
+<html>
+<head>
+<script>
+function swap() {
+  var x = document.getElementById("Night");
+  if (x.innerHTML === "Day") {
+    x.innerHTML = "Night";
+  } else {
+    x.innerHTML = "Day";
+  }
+   var element = document.body;
+   element.classList.toggle("night-mode");
+
+}
+</script>
+<style>
+body {
+  
+  background-color: white;
+  color: black;
+}
+
+.night-mode {
+  background-color: black;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<h1><div id="Night">Day</div></h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mauris diam, elementum eleifend tincidunt non, fringilla in ligula. Donec sagittis dapibus nibh, nec tincidunt dui finibus nec. Phasellus ac augue vel magna pretium sollicitudin vitae sed mauris. Vivamus sollicitudin ultricies nulla nec rutrum. Etiam a turpis tellus. Vivamus egestas tellus ut nisi euismod, vel efficitur felis luctus. Fusce ut leo sollicitudin odio sagittis mattis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat volutpat.
+</p>
+
+<p>Nullam sed hendrerit neque. Quisque consectetur risus et odio sodales sodales. Donec eget hendrerit risus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque lobortis faucibus mi. Proin aliquam ipsum vitae massa lobortis, eu congue mi mattis. Ut dui ligula, molestie at dolor ac, fermentum consectetur nisi. Proin blandit metus sit amet rutrum ultricies. Nullam tincidunt eget mauris ac varius. Aenean at hendrerit augue.</p>
+
+<button onclick="swap()">Toggle dark mode</button>
+
+
+
+</body>
+</html>
